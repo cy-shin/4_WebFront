@@ -13,28 +13,28 @@
             <ol>
                 <li>
                     <label for = "supplier">납품자명</label>
-                    <input type = "text" id = "supplier">
+                    <input type = "text" name = "supplier">
                 </li>
                 <br>
 
                 <li>
                     <label for = "supplieremail">email</label>
-                    <input type = "email" id = "suppliereamil">
+                    <input type = "email" name = "suppliereamil">
                 </li>
                 <br>
 
                 <li>
                     <label for = "suppliersite">홈페이지</label>
-                    <input type = "url" id="suppliersite">
+                    <input type = "url" name ="suppliersite">
                 </li>
                 <br>
 
                 <li>
                     <label for = "localname">지역</label>
                     <select name="localname">
-                        <option>부산</option>
-                        <option>서울</option>
-                        <option>경기</option>
+                        <option value = "부산" selected>부산</option>
+                        <option value = "서울">경기</option>
+                        <option value = "경기">경기</option>
                     </select>
                 </li>
             </ol>
@@ -45,19 +45,19 @@
             <ul>
                 <li>
                     <label for = "itemname">상품명</label>
-                    <input type = "text" id = "itemname">
+                    <input type = "text" name = "itemname">
                 </li>
                 <br>
 
                 <li>
                     <label for = "itemea">납품수량</label>
-                    <input type = "number" id = "itemea" placeholder="최소 100">
+                    <input type = "number" name = "itemea" placeholder="최소 100">
                 </li>
                 <br>
 
                 <li>
                     <label for = "itemlevel">납품등급</label>
-                    <input type = "range" id="itemlevel">
+                    <input type = "range" name="itemlevel">
                 </li>
                 <br>
 
