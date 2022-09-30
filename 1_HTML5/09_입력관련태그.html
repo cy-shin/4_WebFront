@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_입력 관련 태그</title>
+</head>
+<body>
+    <h1> 입력 관련 태그 </h1>
+    <h2> input 태그 </h2>
+    <p> 웹 문서에서 사용자가 값을 입력할 수 있는 양식을 제공하는 태그</p>
+
+
+    <h3> text 관련 input 태그 </h3>
+
+    <pre>
+        ** text 관련 type의 공통 속성 **
+        - size : 입력 상자의 크기를 지정하는 속성
+        - maxlength : 입력 가능한 문자열의 최대 길이
+        
+        - placeholder : 입력 상자에 작성될 내용을 설명
+            (text 뿐만 아니라 number type에서도 사용 가능!)
+    </pre>
+
+    <h4> type = "text" </h4>
+    <pre>
+        - 한 줄 짜리 문자열을 입력할 수 있는 입력 상자
+        - input 태그의 기본값(type을 작성하지 않으면 type="text")
+
+        <strong style="color:red">** 모든 input 태그의 형식은 inline 형식 </strong>
+    </pre>
+
+    <input type = "text">
+    <input>
+    <br>
+
+    size, maxlength, placeholder 추가 : 
+    <input type="text" size="10" 
+     maxlength = "10" 
+     placeholder = "아이디 입력">
+
+    <hr>
+
+    <h4> type = "password" </h4>
+    <p> 비밀번호 입력 상자(입력되는 텍스트를 가려줌) </p>
+    
+    비밀번호 : <input type="password" id="pw1">
+
+    <hr>
+    <h4> 기타 텍스트 관련 타입 (url, tel, search, email) </h4>
+
+    <pre>
+        url, tel, search, email은 기본적으로
+        text와 작성, 출력되는 방법이 동일함.
+        1) 웹 접근성
+        2) form 태그와 함께 사용 시 유효성 검사를 간단히 진행
+        3) 설계상 의미 부여
+    </pre>
+
+    <!-- 
+        ** value 속성 **
+        - 모든 input 태그에 작성 가능한 속성
+         + input 태그만 가지고 있는 속성
+
+        - input 태그에 들어갈 초기값을 지정하는 속성 
+          또는 클릭, 선택되었을 때의 값을 의미함
+    -->
+
+    홈페이지 : <input type = "url" value="https://"> <br>
+    전화번호 : <input type = "tel"> <br>
+    검색어 입력 : <input type = "search"> <br>
+    이메일 입력 : <input type = "email"> <br>
+
+    <hr>
+
+    <h3> number 관련 input 태그 </h3>
+
+    <pre> 
+        number 관련 태그 공통 속성
+        - min : 최소값
+        - max : 최대값
+        - step : 증가 / 감소 단계 지정
+
+        (size, maxlength 등 text타입에서만 사용 가능한 태그는 사용 불가)
+    </pre>
+
+    <h4> type="number" </h4>
+    
+    <p> 숫자만 입력할 수 있는 입력 상자 <br>
+        * (숫자와 관련된 표현인 지수표현 e는 가능)</p>
+    점수 입력 : <input type = "number" min = "0" max = "100" step = "5">
+
+    <h4> type="range" </h4>
+    <input type = "range" min = "0" max = "100" step = "10">
+</body>
+</html>
