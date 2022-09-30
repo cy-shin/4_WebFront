@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_HTML실습문제_2</title>
+</head>
+<body>
+    <form action ="#">
+        <fieldset>
+            <legend>납품자 정보</legend>
+            <ol>
+                <li>
+                    <label for = "supplier">납품자명</label>
+                    <input type = "text" id = "supplier">
+                </li>
+                <br>
+
+                <li>
+                    <label for = "supplieremail">email</label>
+                    <input type = "email" id = "suppliereamil">
+                </li>
+                <br>
+
+                <li>
+                    <label for = "suppliersite">홈페이지</label>
+                    <input type = "url" id="suppliersite">
+                </li>
+                <br>
+
+                <li>
+                    <label for = "localname">지역</label>
+                    <select name="localname">
+                        <option>부산</option>
+                        <option>서울</option>
+                        <option>경기</option>
+                    </select>
+                </li>
+            </ol>
+        </fieldset>
+
+        <fieldset>
+            <legend>납품 정보</legend>
+            <ul>
+                <li>
+                    <label for = "itemname">상품명</label>
+                    <input type = "text" id = "itemname">
+                </li>
+                <br>
+
+                <li>
+                    <label for = "itemea">납품수량</label>
+                    <input type = "number" id = "itemea" placeholder="최소 100">
+                </li>
+                <br>
+
+                <li>
+                    <label for = "itemlevel">납품등급</label>
+                    <input type = "range" id="itemlevel">
+                </li>
+                <br>
+
+                <li>
+                    <label for = "request">기타사항</label>
+                    <textarea rows = "5"></textarea>
+                </li>
+            </ul>
+        </fieldset>
+        <br>
+        <button>send message</button>
+    </form>
+</body>
+</html>
