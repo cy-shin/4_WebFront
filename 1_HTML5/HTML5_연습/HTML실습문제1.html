@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HTML_실습문제_1 </title>
+</head>
+<body>
+    <form>
+        <label> 고객명 : </label>
+        <input type = "text" name = "clientName">
+        <br>
+        <br>
+        
+        <label> 전화번호 : </label>
+        <input type = "tel" name = "phone">
+        <br>
+        <br>
+
+        <label> E-mail : </label>
+        <input type = "email" name = "mail">
+        <br>
+        <br>
+
+        <label> 피자선택 : </label>
+        <select name = "type">
+            <option value = "피자를 선택하세요" selected> 피자를 선택하세요 </option>
+            <option value = "페퍼로니 피자"> 페퍼로니 피자 </option>
+            <option value = "콤비네이션 피자"> 콤비네이션 피자 </option>
+        </select>
+
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <input type = "radio" id = "small" name = "size" value = "small">
+            <label for = "small"> Small </label>
+            <br>
+            <br>
+            <input type = "radio" id = "medium" name = "size" value = "medium">
+            <label for = "medium"> Medium </label>
+            <br>
+            <br>
+            <input type = "radio" id = "large" name = "size" value = "large">
+            <label for = "large"> Large </label>
+            <br>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend> 토핑 선택 </legend>
+            <input type = "checkbox" id = "topping" name = "bacon" value = "bacon">
+            <label for = "bacon"> 베이컨 </label>
+            <br>
+            <br>
+            <input type = "checkbox" id = "topping" name = "cheese" value = "cheese">
+            <label for = "cheese"> 치즈 </label>
+            <br>
+            <br>
+            <input type = "checkbox" id = "topping" name = "onion" value = "onion">
+            <label for = "onion"> 양파 </label>
+            <br>
+            <br>
+            <input type = "checkbox" id = "topping" name = "mushroom" value = "mushroom">
+            <label for = "mushroom"> 버섯 </label>
+            <br>
+            <br>
+        </fieldset>
+
+        <br>
+        <label>희망배송시간 : </label>
+        <input type = "time" name ="deliver">
+
+        <br>
+        <br>
+        <label>배송시 요청사항 : </label>
+        <textarea rows="3"></textarea>
+
+        <br>
+        <br>
+        <button type = "submit"> 주문하기 </button>
+    </form>
+
+    
+</body>
+</html>

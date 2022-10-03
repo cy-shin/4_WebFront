@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML_실습문제_2</title>
+</head>
+<body>
+    <form>
+
+        <fieldset>
+            <legend>납품자 정보</legend>
+            <ol>
+            <li>
+                <label>납품자명 : </label>
+                <input type = "text" name = "supplier">
+            </li>
+            <br>
+            
+            <li>
+                <label>email : </label>
+                <input type = "email" name = "supplierEmail" placeholder = "answer@naver.com">
+            </li>
+            <br>
+            
+            <li>
+                <label>홈페이지 : </label>
+                <input type = "url" name = "supplierUrl" value="http://">
+            </li>
+            <br>
+
+            <li>
+                <label>지역 : </label>
+                <select name = "local">
+                    <option value = "부산" selected> 부산 </option>
+                    <option value = "서울"> 서울 </option>
+                </select>
+            </li>
+            </ol>
+        </fieldset>
+
+        <fieldset>
+            <legend> 납품 정보 </legend>
+            <ul>
+                <li>
+                    <label>상품명 : </label>
+                    <input type = "text" name = "productName">
+                </li>
+                <br>
+
+                <li>
+                    <label>납품수량 : </label>
+                    <input type = "number" name = "productEA" min = "100">
+                </li>
+                <br>
+
+                <li>
+                    <label>납품등급 : </label>
+                    <input type ="range" name = "productValue">
+                </li>
+                <br>
+
+                <li>
+                    <label>기타사항 : </label>
+                    <textarea rows="5"></textarea>
+                </li>
+            </ul>
+            
+        </fieldset>
+        
+        <br>
+        <button type = "submit"> send message</button>
+    </form>
+</body>
+</html>
