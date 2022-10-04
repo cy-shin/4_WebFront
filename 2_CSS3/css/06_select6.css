@@ -1,0 +1,46 @@
+/* 2순위 : */
+    /* 
+    inline-sytle(태그 안에 CSS 코드를 직접 작성)이 있는 경우 해당 style이 적용됨
+    */
+
+
+/* 3순위 : id 선택자 */
+#test1{
+    background-color:black !important;
+    /* 
+        만약 !important 구문이 붙은 속성이 여러 개가 있는 경우,
+        그 안에서 가장 우선순위가 높은 속성이 적용됨!
+    */
+    color:whitesmoke;
+    height: 100px;
+}
+
+/* 4순위 : class 선택자 */
+.box{
+    background-color: green;
+    /* 
+        배경색은 우선 순위에 의해서 green으로 변하지만
+        CSS 속성이 겹치지 않는 width, height는 그대로 반영됨.
+    */
+    }
+    
+    
+/* 5순위 : 태그 선택자 */
+div{
+    /* w200px */
+    width: 200px;
+    /* h200px */
+    height: 200px;
+      
+    background-color: red !important;
+    /* 
+        태그 선택자는 5순위
+        !important 구문을 붙이면 1순위로 적용됨
+     */
+}
+
+/* 4순위 : class 선택자 */
+.box{
+    /* 동일한 선택자로 작성된 CSS 속성은 마지막 설정 값이 적용된다. */
+    background-color: pink !important;
+}
