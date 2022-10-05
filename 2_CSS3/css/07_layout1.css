@@ -1,0 +1,119 @@
+.area1{ background-color: red; }
+.area2{ background-color: orange; }
+.area3{ background-color: rgb(240, 240, 112); }
+.area4{ background-color: rgb(122, 189, 122); }
+.area5{ background-color: skyblue; }
+
+.block{
+    border : 1px solid black; /*1px 두께의 solid 선, black */
+    width: 150px;
+    height: 150px;
+    color: black;
+    font-weight: bold;
+
+    display : block; /* block class를 가진 요소의 형식을 block으로 변경 */
+
+}
+
+.inline{
+    display: inline; /* inline class를 가진 요소의 형식을 inline으로 변경 */
+
+}
+/* 우선 순위가 같은 속성을 여러 개 요소로 넣은 경우 아래쪽에 작성한 속성의 css로 덮어씌워짐 */
+
+.inline-block{
+    display: inline-block; /* inline-block을 가진 요소의 형식을 inline-block으로 변경 */
+}
+
+/* 상하 2분할 */
+
+#container-1{
+    border: 3px solid black;
+    width : 350px;
+    /* height: 450px; */
+    height: 472px;
+}
+
+#container-1 > div:first-child{
+    /* 
+        container-1 속성을 가진 요소의 자식 요소 중 
+        첫 번째 자식 요소의 속성이 div인 경우 해당 요소를 선택함
+     */
+     background-color: mediumslateblue;
+    /* height: 135px; */
+    /* height: 30%; */
+
+    /* calc 함수 */
+    height: calc(472px * 0.7);
+
+    /* % : 브라우저 또는 감싸는 영역의 크기에 비례해서 크기를 지정(자동 계산) */
+}
+
+#container-1 > div:last-child{
+    background-color: palegreen;
+    /* height: 315px; */
+    /* height: 70%; */
+    height: calc(472px * 0.3);
+}
+
+/* 상하 3분할 */
+#container-2 {
+    border: 3px solid black;
+    height: 440px;
+    width: 300px;
+    font-weight: bold;
+}
+#container-2 > div:nth-child(1){
+    background-color: rgb(209, 88, 88);
+    height: 15%;
+}
+#container-2 > div:nth-child(2){
+    background-color: rgb(226, 226, 97);
+    height: 35%;
+}
+#container-2 > div:nth-child(3){
+    background-color: rgb(86, 131, 86);
+    height: 50%;
+}
+
+#container-2 > div:last-child > div {
+    background-color: white;
+    margin: auto;
+    width : 90px;
+    height: 90px;
+}
+
+/* 좌우 2분할(50:50) */
+#container-3{
+    border: 5px solid red;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    /* 테두리의 50% 지점부터 둥글게 처리 */
+    overflow: hidden; 
+    /* 내부 내용이 넘칠 경우, 넘치는 부분을 숨김 */
+}
+
+#container-3 > div{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    
+}
+
+/* display : none VS visibility : hidden */
+.test4{
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+.none{
+    /* 요소는 존재하나 화면에 출력되지 않음 */
+    display: none;
+}
+
+.hidden{
+    /* 화면에 투명한 형태로 출력함 */
+    visibility: hidden;
+}

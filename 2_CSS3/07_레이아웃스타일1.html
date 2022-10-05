@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 07_레이아웃 스타일 1</title>
+
+    <link rel="stylesheet" href="css/07_layout1.css">
+</head>
+<>
+    <h1>레이아웃(layout)</h1>
+
+    <pre>
+        사전적 의미 : 배치, 정리
+        기술적 의미 : 구성 요소(html요소)를 제한된 공간(body태그 영역)에 효율적으로 배치하는 것
+    </pre>
+
+    <hr>
+
+    <h1>화면 배치 방법(형식) : display 속성 </h1>
+
+    <pre>
+        요소가 화면에 어떻게 보여질지 형식을 지정하는 속성
+
+        1. block
+        - 화면을 수직 분할(행을 나눔)
+        - 한 행을 전부 차지함(사용하면 줄바꿈이 됨)
+        - width / height 사용 가능
+
+        2. inline
+        - 화면을 수평 분할(열을 나눔)
+        - 작성한 영역만큼만 차지
+        - width / height 사용 불가능
+
+        3. inline - block
+        - inline의 수평 분할 + block의 크기 조절
+
+        4. none
+        - 화면에 요소가 표시되지 않으나, 존재는 하고 있는 상태
+
+        5. * flex
+        - 요소의 정렬되는 방향, 간격을 유연하게 처리하는 형식
+
+        * grid :
+
+    </pre>
+
+    <h3> block 형식 </h3>
+    <div class="area1 block">1번 영역</div>
+    <div class="area2 block">2번 영역</div>
+    <div class="area3 block">3번 영역</div>
+    <div class="area4 block">4번 영역</div>
+    <div class="area5 block">5번 영역</div>
+
+    <hr>
+
+    <h3> block 형식의 요소(div)를 inline으로 변경 </h3>
+    <!-- Emmet : div.area$.block{$번 영역}*5 -->
+    <div class="area1 block inline">1번 영역</div>
+    <div class="area2 block inline">2번 영역</div>
+    <div class="area3 block inline">3번 영역</div>
+    <div class="area4 block inline">4번 영역</div>
+    <div class="area5 block inline">5번 영역</div>
+    
+
+    <hr>
+
+    <h3> inline </h3>
+    <span class="area1">1번 영역</span>
+    <span class="area2">2번 영역</span>
+    <span class="area3">3번 영역</span>
+    <span class="area4">4번 영역</span>
+    <span class="area5">5번 영역</span>
+
+    <hr>
+
+    <h3> inline 형식의 요소(span)을 block으로 변경</h3>
+    <!-- Emmet : span.area${$번 영역}*5 -->
+    <span class="area1 block">1번 영역</span>
+    <span class="area2 block">2번 영역</span>
+    <span class="area3 block">3번 영역</span>
+    <span class="area4 block">4번 영역</span>
+    <span class="area5 block">5번 영역</span>
+    <!-- html 코드에서의 띄어쓰기가 반영됨 -->
+    
+    <hr>
+
+    <h3> inline-block 확인하기 </h3>
+    <!-- div.area$.block.inline-block{$번 영역}*5 -->
+    <pre>
+        inline, inline-block 요소 사이에 간격이 없게 하려면 html 코드를 한 줄로 작성해야 함
+    </pre>
+    <div class="area1 block inline-block">1번 영역</div>
+    <div class="area2 block inline-block">2번 영역</div>
+    <div class="area3 block inline-block">3번 영역</div>
+    <div class="area4 block inline-block">4번 영역</div>
+    <div class="area5 block inline-block">5번 영역</div>
+    <!-- html 코드에서의 띄어쓰기가 반영됨 -->
+    <!-- 마지막으로 작성한 속성인 inline-block으로 덮어씌워짐 -->
+
+
+    <hr>
+
+    <h1>화면(영역) 분할</h1>
+    div 태그를 이용해 사각형을 여러 개 만드는 방식으로 화면을 분할할 수 있음
+
+    <h3>상하 2분할</h3>
+    <pre>
+        준비물
+        - 전체 영역으로 사용할 영역 요소
+        - 내부를 분할할 요소
+        - display : block
+        - 크기 지정 단위(px, %)
+    </pre>
+
+    <!-- 감싸는 있는 영역 요소 -->
+    <div id="container-1">
+        <!-- 내부를 분할할 때 사용할 요소 -->
+        <div></div>
+        <div></div>
+
+    </div>
+
+    <hr>
+
+    <h3> 상하 3분할 </h3>
+    <pre>
+        1) 감싸는 영역
+        - id : container-2
+        - 높이 : 440px;
+        - 너비 : 300px;
+
+        2) 내부 분할 영역 비율 : 15 : 35 : 50
+    </pre>
+
+    <!-- 뼈대 역할 -->
+    <div id="container-2">
+        <div>1</div>
+        <div>2</div>
+        <div>
+            3
+            <div></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h3> 좌우 2분할 </h3>
+    <pre>
+        준비물
+        - 전체 영역으로 사용할 영역 요소
+        - 내부를 분할할 요소
+        - display : inline-block
+        - 크기 지정 단위(px, %)
+    </pre>
+
+        <!-- 뼈대 역할 -->
+        <div id="container-3">
+            <div class="area3">1</div><div class="area4">2</div>
+        </div>
+
+    <hr>
+
+    <h3> display : none </h3>
+    <pre>
+        - 화면에 요소가 표시되지 않으나 존재는 하고 있는 상태
+
+        - visibility : hidden; -> 요소를 투명한 상태로 <mark>표시</mark>함
+    </pre>
+
+    <!-- Emmet : div.test4*5{$} -->
+    <div class="test4">1</div>
+    <div class="test4 none">2</div>
+    <div class="test4">3</div>
+    <div class="test4 hidden">4</div>
+    <div class="test4">5</div>
+
+</body>
+</html>
