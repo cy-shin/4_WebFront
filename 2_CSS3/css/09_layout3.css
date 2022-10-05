@@ -1,0 +1,99 @@
+div{
+    border : 1px solid black;
+    box-sizing: border-box;
+}
+
+.test{
+    width: 300px;
+    height: 200px;
+    background-color: coral;
+}
+
+/* float - left */
+.left{
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    float:left;
+}
+
+.clear{
+    /* clear: left; */
+    /* float : left 상태를 해제함 */
+    
+    clear: right;
+    /* float : right 상태를 해제함 */
+
+    clear : both;
+    /* float: left와 float: right 상태를 모두 해제함 */
+    background-color: royalblue;
+    color: white;
+}
+
+.right{
+    width: 50px;
+    height: 50px;
+    background-color:khaki;
+
+    float : right;
+    /* 
+        요소를 띄워서 오른쪽으로 정렬
+        (중요) HTML에 먼저 작성된 요소를 먼저 정렬시킨다.
+    */
+}
+
+/* 좌우 2분할 하기 */
+.container-1{
+    width: 400px;
+    height: 200px;
+}
+
+.div-1{
+    height: 100%;
+    width: 25%;
+    float: left;
+}
+
+.bg-1{ background-color: #F675A8;}
+.bg-2{ background-color: #FFB3B3;}
+.bg-3{ background-color: #FFDBA4;}
+.bg-4{ background-color: #C1EFFF;}
+.bg-5{ background-color: #B1B2FF;}
+.bg-6{ background-color: #ECC5FB;}
+.bg-7{ background-color: #576F72;}
+
+/* 좌우 2분할 하기 */
+.container-2{
+    width: 400px;
+    height: 400px;
+}
+
+.row-1{
+    height: 50%;
+    /* width: 100% */
+    /* block 형식이기 때문에 width가 기본적으로 100%라서 생략 가능함 */
+    border: none;
+}
+
+/* .row-2{
+    height: 50%;
+    
+} */
+ 
+.col-1{ /* 열 분할 */
+    width: 50%;
+    height: 100%;
+    float: left;
+    border: none;
+}
+
+.col-1 > img{
+    width: 100%;
+    height: 100%
+}
+
+/* .col-2{
+    height: 100%;
+    width: 50%;
+    border: none;
+} */
