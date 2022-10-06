@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_글자 관련 스타일 5</title>
+
+    <link rel="stylesheet" href="css/11_text-style.css">
+</head>
+<body>
+    <h3> color : 글자 색을 지정하는 속성 </h3>
+    <pre>
+        color
+        1) 색상명(영문) 
+                
+        2) 16진수 숫자 RGB (#fff, #ffffff)
+        3) rgb(255, 255, 255)
+        4) rgba(255, 255, 255, 1)
+        * rgb = 빛의 삼원색
+
+        5) hsl(360, 100%, 100%)   
+        6) hsla(360, 100%, 100%, 1)
+        * hsl : 색조, 채도, 밝기
+
+        * $= a : 투명도 조절 가능 (0 ~ 1)
+        
+        * 6가지의 색 지정 방식은 모든 색상 관련 속성에서 사용할 수 있음
+    </pre>
+
+    <ul id="color-ul">
+        <li>색상명</li>
+        <li>16진수</li>
+        <li>rgb</li>
+        <li>rgba</li>
+        <li>hsl</li>
+        <li>hsla</li>
+    </ul>
+
+    <hr>
+    <h3> text-decoration : 텍스트에 줄을 긋는 속성 </h3>
+    <ul id="deco-ul">
+        <li>아랫줄 긋기</li>
+        <li>중간줄 긋기</li>        
+        <li>윗줄 긋기</li>
+        <li><a href="10_레이아웃스타일4.html">줄 없애기</a></li>
+    </ul>
+
+    <hr>
+    <h3> text-align : 내부에 작성된 글 또는 inline 요소를 정렬 </h3>
+
+    <pre>
+        text-align은 display가 inline인 경우 적용되지 않는다.
+    </pre>
+
+    <div id="align-test">
+        <p>안녕하세요? <span>abcdef</span> 졸지 마세요! </p>
+        <p>안녕하세요? <span>abcdef</span> 졸지 마세요! </p>
+        <p>안녕하세요? <span>abcdef</span> 졸지 마세요! </p>
+        <p>
+            Hello World! Hello World! Hello World! Hello World! Hello World! 
+            Hello World! Hello World! Hello World! Hello World! Hello World! 
+            Hello World! Hello World! Hello World! Hello World! Hello World!
+            Hello World! Hello World! Hello World! Hello World! Hello World!
+            Hello World! Hello World! Hello World! Hello World! Hello World!
+        </p>
+
+        <p>
+            <!-- inline-block도 정렬이 될까? -->
+            <span>inline-block</span>
+        </p>
+    </div>
+
+    <hr>
+    <h3>line-height : 줄 간격(장평)을 지정하는 속성</h3>
+
+    <pre>
+        한 줄의 높이를 지정하는 속성
+        (줄 사이 간격 지정 X)
+
+        * 줄의 높이(line-height)가 글자의 크기(font-size)보다 큰 경우
+          해당 줄의 세로줄 한 가운데로 정렬됨
+    </pre>
+
+    <div id="line-test">
+        <!-- line-height 높게 -->
+        <p>
+            동해물과 백두산이 마르고 닳도록 <br>
+            하느님이 보우하사 우리나라 만세 <br>
+            무궁화 삼천리 화려강산 <br>
+            대한사람 대한으로 길이 보전하세
+            
+        </p>
+
+        <!-- line-height 낮게 -->
+        <p>
+            동해물과 백두산이 마르고 닳도록 <br>
+            하느님이 보우하사 우리나라 만세 <br>
+            무궁화 삼천리 화려강산 <br>
+            대한사람 대한으로 길이 보전하세
+        </p>
+
+    </div>
+
+    <hr>
+    <h3>letter-spacing : 글자 사이의 간격(자간) 지정 속성</h3>
+    <h3 id="letter-test">
+        letter-spacing : 글자 사이의 간격(자간) 지정 속성  
+    </h3>
+
+    <pre>
+        값으로 음수를 넣으면 글자 사이 간격이 줄어듦
+    </pre>
+
+</body>
+</html>

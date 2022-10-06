@@ -1,0 +1,91 @@
+#color-ul > li {
+    font-size : 24px;
+    font-weight: bold;
+}
+
+#color-ul > li:nth-child(1) {
+    color: darkolivegreen;
+}
+#color-ul > li:nth-child(2) {
+    /* color: #53d; */
+            /* rgb */
+    color: #891811;
+            /* r g b */
+}
+#color-ul > li:nth-child(3) {
+    color: rgb(0, 0, 250)
+}
+#color-ul > li:nth-child(4) {
+    color: rgba(0, 0, 250, 0.5)
+}
+#color-ul > li:nth-child(5) {
+    color: hsl(0, 100%, 50%);
+            /*   색조 채도 밝기  */
+            /*   색조 : 0(red) 120(green) 240(blue) */
+}
+#color-ul > li:nth-child(6) {
+    color: hsl(0, 100%, 50%, 0.7);
+            /*   색조 채도 밝기 투명도 */
+}
+
+/* text-decotration */
+#deco-ul > li:nth-child(1){
+    text-decoration-line: underline;
+}
+#deco-ul > li:nth-child(2){
+    text-decoration-line: line-through;
+}
+#deco-ul > li:nth-child(3){
+    text-decoration-line: overline;
+}
+/* 줄을 없애보자 */
+#deco-ul > li > a{
+    text-decoration-line: none;
+    color : black;
+    font-weight: bold;
+}
+/* li 안에 a 태그를 지정해야함 */
+
+#align-test > p:first-child{
+    text-align: left;
+}
+#align-test > p:nth-child(2){
+    text-align: center;
+    /* display: inline; */
+    /* 
+        inline 형식으로 바꾸면,
+        작성한 만큼의 영역만 차지하므로
+        정렬할 수 없음
+     */
+}
+#align-test > p:nth-child(3){
+    text-align: right;
+}
+
+#align-test > p:nth-child(4){
+    text-align: justify;
+}
+
+#align-test > p:nth-child(5) > span{
+    display: inline-block;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    background-color: khaki;
+}
+
+#align-test > p:nth-child(5) {
+    text-align: center;
+}
+
+#line-test > p:nth-child(1) {
+    line-height: 50px;
+}
+
+#line-test > p:nth-child(2) {
+    line-height: 10px;
+}
+
+#letter-test{
+    letter-spacing: -2px;
+}

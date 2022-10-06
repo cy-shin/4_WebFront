@@ -1,0 +1,109 @@
+/* 웹 폰트 가져오기 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap');
+
+#size-test{
+    font-size: 60px;
+}
+
+#size-test > li:nth-child(1){
+    font-size: 10px;
+}
+#size-test > li:nth-child(2){
+    font-size: 7pt;
+}
+#size-test > li:nth-child(3){
+    font-size: 50%;
+}
+#size-test > li:nth-child(4){
+    font-size: 0.5em;
+}
+
+/* font-weight */
+#weight-test{
+    font-size : 24px;
+    /* font-weight: bold; */
+    font-weight: lighter;
+}
+
+#weight-test> li:nth-child(1){
+    font-weight: lighter;
+    /* 부모보다 얇게 */
+    /* 부모가 bold이므로 normal이 됨 */
+    /* 부모가 noraml이면 더 얇아짐(얇은 폰트를 지원하는 경우) */
+}
+#weight-test> li:nth-child(2){
+    font-weight: bold;
+}
+#weight-test> li:nth-child(3){
+    font-weight: bolder;
+    /* 부모보다 두껍게, 부모가 얇은 경우 normal로 표시 */
+}
+#weight-test> li:nth-child(4){
+    font-weight: 900;
+    /* 
+       해당 가중치를 지원하지 않으면
+       normal이나 bold로 처리됨
+    */
+}
+#weight-test> li:nth-child(5){
+    /* font - style : 글꼴의 모양을 지정하는 속성 */
+    /* italic : 폰트에서 제공하는 비스듬한 글자 */
+    /* oblique: 글자를 강제로 비스듬하게 만듦 */
+    font-style:italic;
+    font-family:"궁서";
+    /* font-style:oblique; */
+
+}
+
+#family-test1 > li:first-child{
+    font-size: 24px;
+    font-family: "궁서";
+}
+#family-test1 > li:nth-child(2){
+    font-size: 24px;
+    font-family: "폰트1", "궁서체";
+    /* 
+        우선 "폰트1"을 적용하고, 없으면 그 다음 폰트인 "궁서체" 적용
+     */
+}
+/* 
+    * 폰트 중 '폰트명'과 '폰트명+체'가 둘다 있는 경우
+    폰트명 : 글자의 크기에 따라 폭이 변함(가변)
+    폰트명+체 : 글자 크기에 상관 없이 폭이 일정함(고정)
+ */
+
+#family-test1 > li:nth-child(3) {
+    font-size: 24px;
+    font-family: "폰트";
+    /* 컴퓨터에 해당 폰트가 없으면 브라우저의 기본 폰트가 적용됨 */
+}
+#family-test2 > li:first-child{
+    font-size: 24px;
+    font-family: fantasy;
+}
+#family-test2 > li:nth-child(2){
+    font-size: 24px;    
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+/* 
+    @import를 이용하는 방법 
+    import문은 항상 맨 위에 위치시킬 것
+*/
+
+#family-test2 > li:nth-child(3){
+    font-size: 24px;    
+    font-family: 'Noto Serif KR', serif;
+}
+
+/* @font-face를 이용하는 방법 */
+@font-face {
+    font-family: 'RixInooAriDuriR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#family-test2 > li:nth-child(4){
+    font-family: 'RixInooAriDuriR';
+}
