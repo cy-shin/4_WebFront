@@ -65,6 +65,10 @@
 /* align-self */
 
 /* 각 item별로 교차축 배치를 지정하는 속성 */
+
+.flex-container{
+    flex-direction: column;
+}
 .start{ align-self: flex-start;}
 .end{ align-self: flex-end;}
 .center{ align-self: center;}
