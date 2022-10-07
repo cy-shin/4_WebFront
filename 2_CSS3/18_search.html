@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색창</title>
+    <!-- 검색창 component 만들기 -->
+    <style>
+        *{box-sizing: border-box;}
+        /* 검색창 전체 너비 지정 */
+        .search-area{ width: 500px; }
+        
+        .search-area fieldset{
+            padding: 2px;
+            margin: 0;
+            border: 2px solid #455ba8;
+            border-radius: 5px;
+            display: flex;
+        }
+
+        /* 검색어 입력 상자 */
+        #query{
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            width: 92%;
+            /* 요소가 flex-direction에 의해 방향이 바뀔 가능성이 있다면 
+               flex-basis를 사용하는 것이 좋음 */
+
+            /* border: 0; 도 가능함 */
+            border: none;
+
+            /* border를 0으로 했어도, 검색어 상자를 누르면 검정색 줄이 보임 -> outline */
+            /* outline : input tag에 focus가 맞춰졌을 때, 이를 표현하기 위한 바깥 선 */
+            outline: none;
+        }
+
+        /* 검색 버튼 */
+        #search-btn{
+            width: 8%;
+            background-color: white;
+            border: none;
+            /* 글자처럼 취급되어서 글자, 글꼴 관련 스타일로 꾸밀 수 있음 */
+            font-size: 1.2em;
+            color:#455ba8;
+            cursor: pointer; /* 마우스 커서 손가락 모양 */
+        }
+
+
+
+    </style>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
+    <!-- i 태그는 icon 용도로 자주 사용함 -->
+    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+
+</head>
+<body>
+    <article class="search-area">
+        <!-- form 태그 : 내부 input태그의 값을 서버 또는 페이지로 전달(= 제출) -->
+        <form action="#">
+            <fieldset>
+                <input type="text" id="query" name="query" 
+                 placeholder="검색어를 입력해주세요.">
+
+                <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass">
+                    <!-- i태그에서 class만 꺼내서 버튼에 class로 추가함 -->
+                    <!-- 글자처럼 취급되어서 font관련 스타일로 꾸밀 수 있음 -->
+                </button>
+            </fieldset>
+        </form>
+    </article>
+    
+</body>
+</html>

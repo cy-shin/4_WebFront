@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{box-sizing: border-box;}
+        section, article{
+            /* border: 1px solid black; */
+        }
+
+        .content-2{
+            width: 340px;
+            height: 800px;
+        }
+        /* login 폼 */
+        form[name="login-frm"]{
+            height: 140px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+
+            /* main-axis 가운데에 배치 */
+            justify-content: center;
+        }
+
+        /* 아이디, 비밀번호, 로그인 버튼 영역 */
+        /* flex-container이면서 동시에 form 태그의 item이기도 함 */
+        #id-pw-area{
+            margin: 0;
+            padding: 0;
+            
+            border: 1px solid #ddd;
+
+            display: flex;
+
+            /* form 태그 내부에서 중심축 방향으로 60%만큼 차지 */
+            flex-basis: 60%;
+            /* item이라서 사용할 수 있음! */
+        }
+
+        /* 아이디, 비밀번호 영역 */
+        #id-pw-area > section:first-child{
+            flex-basis: 75%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 아이디, 비밀번호 input 태그 */
+        #id-pw-area > section:first-child > input{
+            flex-basis: 50%;
+
+            border: none;
+            outline: none; /* input태그에는 focus 효과가 있으므로 outline을 꼭 신경쓸 것 */
+
+            padding: 5px;
+
+            border-right: 1px solid #ddd;
+        }
+
+        
+        #id-pw-area > section:first-child > input[name="inputId"]{
+            border-bottom: 1px solid #ddd;
+        }
+        /* 그냥 input을 적으면 태그 우선순위때문에 #id-pw-area > section:first-child > input의 속성이 적용됨 */
+        
+        /* id, pw input 태그에 포커스가 맞춰졌을 때 */
+        #id-pw-area > section:first-child > input:focus{
+            border: 2px solid #455ba8
+        }
+
+        /* 로그인 버튼 영역 */
+        #id-pw-area > section:last-child{
+            flex-basis: 25%;
+            /* border-left: 1px solid #ddd; */
+            display: flex;
+
+        }
+
+          /* 로그인 버튼 영역 */
+        #id-pw-area > section:last-child > button{
+            /* flex-basis: 100%; 요소가 하나만 있으므로 기본 100% */
+            width: 100%;
+            /* border-left: 1px solid #ddd; */
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #id-pw-area > section:last-child > button:hover{
+            background-color: #455ba8;
+            color: white;
+            transition-duration: 0.2s;
+        }
+            
+        /* 회원가입, ID/PW 찾기 영역 */
+        #signUp-find-area{
+            margin-top: 10px;
+            padding-left: 5px;
+        }
+
+        #signUp-find-area > a{
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+
+        #signUp-find-area > span{
+            padding: 0 10px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <section class="content-2">
+        <form action="#" name="login-frm">
+            <!-- frm form -->
+            <!-- 아이디, 비밀번호, 로그인 버튼 -->
+            <fieldset id="id-pw-area"> 
+                <!-- 아이디/비밀번호 -->
+                <section>
+                    <input type="text" name="inputId" placeholder="아이디" autocomplete="off">
+                    <input type="password" name="inputPw" placeholder="비밀번호">
+                </section>
+
+                <!-- 로그인 -->
+                <section>
+                    <!-- 버튼 태그에 type 안쓰면 기본값 submit -->
+                    <button>로그인</button>
+                </section>
+            </fieldset>
+
+            <!-- 아이디 저장 체크박스 -->
+            <!-- label 태그 내부에 input 태그를 작성하면 label for="id"를 작성한 것처럼 만들어짐 -->
+            <label>
+                <input type="checkbox" name="saveId">아이디 저장
+            </label>
+
+            <!-- 회원가입, ID/PW찾기 -->
+            <article id="signUp-find-area">
+                <a href="#">회원가입</a>
+                <span>|</span>
+                <a href="#">ID/PW찾기</a>
+            </article>
+        </form>
+
+    </section>
+</body>
+</html>
