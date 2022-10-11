@@ -1,11 +1,29 @@
-#grid-container{
+#grid-container0, #grid-container1, #grid-container2{
     border: 1px solid black;
-    width: 500px;
-    height: 500px;
+    /* width: 500px;
+    height: 500px; */
     display: grid;
 }
 
-#grid-container > div{
+#grid-container0 > div{
+    border: 1px solid black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* width: 100px;
+    height: 100px; */
+}
+
+#grid-container1 > div{
+    border: 1px solid black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* width: 100px;
+    height: 100px; */
+}
+
+#grid-container2 > div{
     border: 1px solid black;
     color: white;
     font-size: 20px;
@@ -55,17 +73,23 @@
     grid-template-columns: repeat(3, minmax(100px, auto));
 } */
 
-/* auto-fill & auto-fit */
-#grid-container{
-    /* auto-fill
-    공간이 허락하는 만큼 채워넣음 */
-    /* grid-template-rows: repeat(3, 50px); row길이는 50px로 고정하였음
-    grid-template-columns: repeat(auto-fill, minmax(15%, auto)); column길이는 15%로 하되, 공간이 허락하는 만큼 채워넣음 */
-
-    /* auto-fit
-    공간이 허락하는 만큼 채워넣고, 남는 공간이 있는 경우 늘림 */
+/* auto-fill & auto-fit 연습 */
+#grid-container0{
+    /* 사용하지 않은 경우 */
     grid-template-rows: repeat(5, 50px);
-    /* grid-template-columns: repeat(5, auto-fit, minmax(20%, auto)); */
-    grid-template-columns: repeat(5, auto-fill, minmax(20%, auto));
+    grid-template-columns: repeat(5, 100px);
 }
 
+/* auto-fill & auto-fit */
+#grid-container1{
+    /* auto-fill
+    남는 공간이 있는 경우 새 칸을 만들어 채워넣음 */
+    grid-template-rows: repeat(5, 50px);
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+#grid-container2{
+    /* auto-fit
+    남는 공간이 있는 경우 그만큼 칸의 크기를 늘림 */
+    grid-template-rows: repeat(5, 50px);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
