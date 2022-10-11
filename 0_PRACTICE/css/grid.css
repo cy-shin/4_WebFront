@@ -1,0 +1,71 @@
+#grid-container{
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    display: grid;
+}
+
+#grid-container > div{
+    border: 1px solid black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* width: 100px;
+    height: 100px; */
+}
+
+#grid-item1{background-color: orange;}
+#grid-item2{background-color: orange;}
+#grid-item3{background-color: orange;}
+#grid-item4{background-color: orange;}
+#grid-item5{background-color: orange;}
+#grid-item6{background-color: orange;}
+#grid-item7{background-color: orange;}
+#grid-item8{background-color: orange;}
+#grid-item9{background-color: orange;}
+
+/* ------------------------------------ */
+
+/* grid-template-rows/columns와 fr(fraction) */
+/* 비율에 맞게 배치함 */
+/* #grid-container{
+    grid-template-rows: 1fr 1fr 1fr; >  1:1:1 비율로 배치
+    grid-template-columns: 1fr 1fr 1fr;
+} */
+
+/* row 길이는 100px, column 길이는 1:2:3 비율로 배치 */
+/* #grid-container{
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 1fr 2fr 3fr;
+} */
+
+/* repeat */
+/* 반복해서 적용함 */
+/* #grid-container{
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr); 1fr을 3번 반복함    
+} */
+
+/* minmax */
+/* 최소 길이와 최대 길이를 지정할 수 있음(auto로 지정 시 최대한 늘림) */
+/* minmax(row, column) */
+/* #grid-container{
+    grid-template-rows: repeat(3, minmax(100px, auto));
+    grid-template-columns: repeat(3, minmax(100px, auto));
+} */
+
+/* auto-fill & auto-fit */
+#grid-container{
+    /* auto-fill
+    공간이 허락하는 만큼 채워넣음 */
+    /* grid-template-rows: repeat(3, 50px); row길이는 50px로 고정하였음
+    grid-template-columns: repeat(auto-fill, minmax(15%, auto)); column길이는 15%로 하되, 공간이 허락하는 만큼 채워넣음 */
+
+    /* auto-fit
+    공간이 허락하는 만큼 채워넣고, 남는 공간이 있는 경우 늘림 */
+    grid-template-rows: repeat(5, 50px);
+    /* grid-template-columns: repeat(5, auto-fit, minmax(20%, auto)); */
+    grid-template-columns: repeat(5, auto-fill, minmax(20%, auto));
+}
+
