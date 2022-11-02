@@ -91,7 +91,7 @@ function fnTest5(){
         }
     }
 
-    const resul5 = document.getElementById("result5");
+    const result5 = document.getElementById("result5");
     
     if(str != "") {// 체크가 된 경우
         result5.innerText = str;
