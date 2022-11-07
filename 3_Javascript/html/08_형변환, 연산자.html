@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_형변환, 연산자</title>
+</head>
+<body>
+
+    <h1>문자열 -> 숫자</h1>
+
+    <pre>
+        요소의 내용 또는 값을 얻어오면 기본적으로 문자열(string)으로 인식됨
+        -> 덧셈 연산 시 '더하기'가 아니라 '이어쓰기'가 되는 문제가 생김
+    
+        1. parseInt(문자열) : "정수", "실수" 문자열을 정수로 바꿈
+        예1) "123" -> 123
+        예2) "1.234" -> 1
+        * 소수점이 있는 경우, 버림 처리함
+
+        2. parseFloat(문자열) : "정수"는 정수로, "실수"는 실수로 바꿈
+        예1) "123" -> 123
+        예2) "1.234" -> 1.234
+
+        3. Number(문자열) : "정수"는 정수, "실수"는 실수로 바꿈
+        예1) "123" -> 123
+        예2) "1.234" -> 1.234
+    </pre>
+
+    <button class="btn1">형변환 확인</button>
+    <button class="btn1">형변환 확인</button>
+    <button class="btn1">형변환 확인</button>
+
+    <hr>
+    <h1>동등 비교 / 동일 비교 연산자</h1>
+    <pre>
+        1. 동등 비교 연산자 ( == , != )
+        - 값이 같으면 true (값의 자료형은 관계 없음 == 자동 형변환이 이루어짐)
+        * 참고 : 자바스크립트에서는 연산 시 자동 형변환이 되는 경우가 많음!
+
+        예) true == '1' == 1 == 1.0 -> true
+        - true와 숫자(또는 숫자로 이루어진 문자열)을 연산 시 자동으로 숫자로 형변환하여 연산
+
+        2. 동일 비교 연산자 ( === , !== )
+        - 동등 비교 연산자의 특징(자동 형변환)이 적용되지 않은 연산
+        - 값, 자료형이 모두 같은 경우에만 true
+
+        예) true === '1' -> false
+
+    </pre>
+
+    <hr>
+    <h1>문자열(string) 내장 함수</h1>
+
+    <pre>
+        1. string.indexOf("찾고싶은 문자열")
+        - string 내에서 "찾고싶은 문자열"의 시작 인덱스를 반환
+        - 없는 경우, -1을 반환
+
+        2. string.lastIndexOf("찾고싶은 문자열")
+        - string 내에서 "찾고싶은 문자열"의 시작 인덱스를 반환
+        - 뒤에서부터 검색
+        * 인덱스 번호의 기준은 앞에서부터!
+        - 없는 경우, -1을 반환
+
+        * 조건식 등으로 활용할 수 있음
+        
+        3. string.substring(시작 인덱스)
+        - 문자열에서 시작 인덱스부터 끝까지만 잘라서 반환
+        예) "Hello World".substring(2) == "llo World"
+
+        
+        4. string.substring(시작 인덱스, 종료 인덱스)
+        - 문자열에서 시작 인덱스부터 종료 인덱스 전까지의 범위만큼 잘라서 반환
+        * 종료 인덱스는 미포함
+        예1) "HelloWorld"
+             0123456789
+
+             HelloWorld.substring(2,6) -> lloW (6번 인덱스인 o는 제외됨)
+        예2) "Hello World"
+              0123456789 10
+
+              Hello World.substring( str.indexOf("world") ) -> world
+              Hello World.substring( 0, str.indexOf(" ") ) -> Hello
+
+        5. string.split("구분자") : 문자열을 "구분자"를 기준으로 나누어 배열로 반환
+        
+        예1) 나눌 규칙 입력 시
+        const str = "김밥, 라면, 맥주, 막걸리, 파전";
+        const arr = str.split(", ");
+        arr[1] -> '라면'
+        arr[3] -> '막걸리'
+
+        예2) 빈 문자열 입력 시
+        const str = "김밥, 라면, 맥주, 막걸리, 파전";
+        const arr = str.split(""); 
+        arr 출력 : (19) ['김', '밥', ',', ' ', '라', '면', ',', ' ', '맥', '주', ',', ' ', '막', '걸', '리', ',', ' ', '파', '전']
+
+    </pre>
+    
+    <hr>
+    <h1>숫자 관련 내장 객체 / 내장 함수</h1>
+
+    <pre>
+        1. 숫자(number) 타입 리터럴 표기법
+        - 123(정수), 9.321(실수), 양수, 음수, Infinity(무한), NaN(Not A Number)
+
+        2. 숫자 관련 내장 객체 : Math
+        - Math.random() : 0 이상 1 미만의 무작위 숫자 하나를 발생
+
+        - Math.ceil(값)  : 올림
+        - Math.floor(값) : 내림
+        - Math.trunc(값) : 버림
+        - Math.round(값) : 반올림
+        * 소수점 첫째 자리에 적용되어, 결과적으로 정수 부분만 표시됨
+
+        3. 숫자.toFixed(자릿수)
+        - 숫자를 지정된 자릿수 까지 반올림해서 표현
+        - 문자형으로 반환됨
+
+        예1) (3.45).toFixed -> '3.5'
+        예2) (3.43).toFixed -> '3.4'
+        
+
+    </pre>
+
+    <h3>isNaN(값)</h3>
+        - 값이 숫자가 아니면 true;
+        - 숫자면 false;
+
+    <input type="text" id="input2"> <button id="btn2">숫자인지 확인</button>
+
+    <h3>Math 내장 객체</h3>
+    <input type="text" id="input3"> <button id="btn3">Math 확인</button>
+
+
+    <h3>Math.random</h3>
+    <button id="btn4">랜덤 배경색</button>
+
+
+    <script src="../js/08_형변환, 연산자.js"></script>
+</body>
+</html>
