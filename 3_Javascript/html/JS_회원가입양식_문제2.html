@@ -109,7 +109,76 @@
 
     <script>
         // 1. 아이디 선택
+        const inputId = document.getElementById("inputId");
+
+        inputId.addEventListener("change", function(){
+            const regEx = /^[a-z][\w_-]{5,13}$/;
+            if(!regEx.test(inputId.value)){
+                this.style.backgroundColor="red";
+                this.style.color="white";
+            }
+            if(regEx.test(this.value)){
+                this.style.backgroundColor="springgreen";
+                this.style.color="black";
+            }
+        })
+
+        // 2. 비밀번호 선택
+        const inputPw = document.getElementById("inputPw");
+        const pwMessage = document.getElementById("pwMessage");
+        const inputPwConfirm = document.getElementById("inputPwConfirm");
+
+        inputPwConfirm.addEventListener("keyup", function(){
+            if(inputPw.value.trim().length == 0) {
+                alert("먼저 비밀번호를 입력하세요");
+                inputPwConfirm.value="";
+                inputPw.focus();
+            }
+        })
+ 
+        // 3. 이름 /^[가-힣]{2,5}$
+        const inputName = document.getElementById("inputName");
+        const nameMessage = document.getElementById("nameMessage");
+
+        inputName.addEventListener("change", function(){
+            if(inputName.value.trim().length == 0) {
+                nameMessage.innerText = "";
+                nameMessage.classList.remove("confirm", "error");
+                return;
+            }
+            const regEx = /^[가-힣]{2,5}$/;
+            if(!regEx.test(inputName.value)){
+                nameMessage.innerText = "한글만 입력하세요.";
+                nameMessage.classList.add("error");
+                nameMessage.classList.remove("confirm");
+            }
+            if(regEx.test(inputName.value)){
+                nameMessage.innerText = "정상입력";
+                nameMessage.classList.add("confirm");
+                nameMessage.classList.remove("error");
+            }
+        })
+
+        const gender = document.getElementsByName("gender");
+
+
+        // 인라인 방식
+        // function validate(){
+        //     if(!gender[0].checked && !gender[1].checked){
+        //         alert("성별을 선택하세요");
+        //         return false;
+        //     }
+        // }
+
+        // 표준 이벤트 방식
+        const form = document.getElementsByTagName("form")[0];
         
+        form.addEventListener("submit", function(event){
+            console.log("hello");
+            event.preventDefault();
+            alert("경고");
+        })
+
     </script>
     
 </body>
